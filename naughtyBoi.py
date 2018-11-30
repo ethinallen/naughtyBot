@@ -1,7 +1,10 @@
 from selenium import webdriver
-# from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import time
+
+#specify the path to the driver
+pathToDriver = '/home/drew/geckodriver'
 
 url = 'http://cgi.resourceindex.com/'
 fieldPathList = [
@@ -28,7 +31,7 @@ def formatList(wrongFormat):
 
 # starts the driver
 def createDriver(url):
-        driver = webdriver.Firefox(executable_path='/home/drew/geckodriver')
+        driver = webdriver.Firefox(executable_path=pathToDriver)
         driver.get(url)
         return driver
 
