@@ -36,7 +36,7 @@ def createDriver(url):
         return driver
 
 # submits a given naughtyString
-def chaos(url, driver, fieldPathList, naughtyString):
+def sendString(url, driver, fieldPathList, naughtyString):
     time.sleep(.5)
     for fieldPath in fieldPathList:
         driver.find_element_by_xpath(fieldPath).clear()
@@ -58,5 +58,5 @@ time.sleep(3)
 # left headed so that way we can watch it :)
 for naughtyString in naughtyList:
     print('Entering string: ' + naughtyString)
-    chaos(url, driver, fieldPathList, naughtyString)
+    sendString(url, driver, fieldPathList, naughtyString)
     time.sleep(.5)
